@@ -56,6 +56,38 @@ fetch("dictoflists.json")
     currDictOfLists = getCurrDictOfLists();
     if (!validateCurrDictOfLists()) return;
     //console.log(dictoflists);
+    if (winCon[2] === 0) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeFatso";
+    } else if (winCon[2] === 1) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeShineso";
+    } else if (winCon[2] === 2) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeLearnso";
+    } else if (winCon[2] === 3) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeLearnso";
+    } else if (winCon[2] === 4) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeHeightso";
+    } else if (winCon[2] === 5) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeStatso";
+    }
+    if (winCon[0] === false) {
+      document.getElementById("headerText").innerText = document.title =
+        document.getElementById("headerText").innerText.slice(0, 4) +
+        "Min" +
+        document.getElementById("headerText").innerText.slice(4);
+    }
+    if (winCon[1] === true) {
+      document.getElementById("headerText").innerText = document.title =
+        document.getElementById("headerText").innerText.slice(0, 4) +
+        "Second" +
+        document.getElementById("headerText").innerText.slice(4);
+    }
+
     categories = generateCategories();
     setCategories();
   })
@@ -114,7 +146,11 @@ pokePickerInput.addEventListener("keydown", (event) => {
       if (
         suggestionsList.getElementsByTagName("li").length > 0 &&
         pokePickerInput.value.toUpperCase() !==
-          suggestionsList.getElementsByTagName("li")[0].textContent
+          suggestionsList.getElementsByTagName("li")[0].textContent &&
+        pokePickerInput.value.toUpperCase() !==
+          suggestionsList.getElementsByTagName("li")[
+            suggestionsList.getElementsByTagName("li").length - 1
+          ].textContent
       ) {
         selectKeyword(
           suggestionsList.getElementsByTagName("li")[0].textContent
@@ -524,8 +560,8 @@ function getOptimal(category, winConditionIndex, minmax, second) {
           secondMaxMon = monList[i];
           secondMaxWeight = pokemonData[monList[i]][winConditionIndex];
         }
-        console.log("MAX: " + maxMon);
-        console.log("Second: " + secondMaxMon);
+        //console.log("MAX: " + maxMon);
+        //console.log("Second: " + secondMaxMon);
       }
     } else {
       maxWeight = 10000000;
@@ -542,8 +578,8 @@ function getOptimal(category, winConditionIndex, minmax, second) {
           secondMaxMon = monList[i];
           secondMaxWeight = pokemonData[monList[i]][winConditionIndex];
         }
-        console.log("MAX: " + maxMon);
-        console.log("Second: " + secondMaxMon);
+        //console.log("MAX: " + maxMon);
+        //console.log("Second: " + secondMaxMon);
       }
     }
     return secondMaxMon;
@@ -857,9 +893,9 @@ function validateCurrDictOfLists() {
         for (let c = b + 1; c < currDictOfLists[key].length; c++) {
           valueC = currDictOfLists[key][c];
           if (valueC === parseInt(key, 10)) continue;
-          console.log(a + " " + b + " " + c);
+          //console.log(a + " " + b + " " + c);
           if (threeValuesCommon(a, b, c)) {
-            console.log(true);
+            //console.log(true);
             return true;
           }
         }
