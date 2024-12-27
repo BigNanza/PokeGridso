@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PokeGridso</title>
+    <link rel="stylesheet" href="mainPageStyle.css" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo"></div>
+      <div class="mainTitle">PokeGridso</div>
+      <div class="otherPages">Game Chooser Pokemon List Contact Me</div>
+    </div>
+    <div class="categories" id="categories">
+      <label
+        ><input type="checkbox" name="catOpt" value="0" />Mono/Dual type<a
+          href="#monodualtype"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="1" />Types<a href="#types"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="2" />Groups<a
+          href="#groups"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="3" />Evos<a href="#evos"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="4" />Colors<a
+          href="#colors"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="5" />Abil<a href="#abil"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="6" />Generations<a
+          href="#generations"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="7" />Moves<a href="#moves"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="8" />Evolution Triggers<a
+          href="#evolutiontriggers"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="9" />Abilities<a
+          href="#abilities"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="10" />Egg Groups<a
+          href="#egggroups"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="11" />Gender Rates<a
+          href="#genderrates"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="12" />Growth Rates<a
+          href="#growthrates"
+          >?</a
+        ></label
+      ><br />
+      <label
+        ><input type="checkbox" name="catOpt" value="13" />Shapes<a
+          href="#shapes"
+          >?</a
+        ></label
+      >
+    </div>
+    <div class="winCon" id="winCon">
+      <div class="winChecks" id="winChecks">
+        <label><input type="checkbox" id="minmax" />Go for minimum?</label
+        ><br />
+        <label><input type="checkbox" id="second" />Go for second?</label>
+      </div>
+      <div class="winChooser" id="winChooser">
+        <div>
+          <label><input type="radio" name="winOpt" value="0" />Weight</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="1" />Shine</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="2" />Speed</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="3" />Learnset</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="4" />Height</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="5" />Stats</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="pp" id="ppClass">
+      <label><input type="checkbox" id="pp" />Enable pp?</label>
+    </div>
+
+    <div class="submit">
+      <button onclick="takeToGame()">Submit and Take to Game</button>
+    </div>
+    <div class="explanations">
+      <h2>Explanations</h2>
+      <h3 id="monodualtype">Mono/Dual Type</h3>
+      Difficulty: Easy <br />
+      If a pokemon has 1 or 2 types. <br />
+      For example, charmander is a monotype pokemon because it is pure fire
+      type. Geodude is a dualtype pokemon because it is ground and rock type.
+      <h3 id="types">Types</h3>
+      Difficulty: Very Easy <br />
+      What type a pokemon is. <br />
+      For example, nidoking would fit the categories for ground and poison
+      types. However, it would not work for fire type.
+      <h3 id="groups">Groups</h3>
+      Difficulty: Medium <br />
+      Certain groups that a pokemon can fit under. <br />
+      The four groups are
+      <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Baby_Pokémon"
+        >baby</a
+      >,
+      <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Fossil_Pokémon"
+        >fossil</a
+      >,
+      <a
+        href="https://bulbapedia.bulbagarden.net/wiki/Category:Legendary_Pokémon"
+        >legendary</a
+      >, and
+      <a
+        href="https://bulbapedia.bulbagarden.net/wiki/Category:Mythical_Pokémon"
+        >mythical</a
+      >. The links provided contain lists of all the pokemon that fit those
+      categories.
+      <h3 id="evos">Evos</h3>
+      Difficulty: Easy <br />
+      What stage of an evolution line a pokemon is. <br />
+      Pokemon without an evolution line fit the category No Evo Chain. Magby is
+      1st Evo. Machoke and exeggutor are both 2nd evo. Machamp is 3rd evo.
+      <h3 id="colors">Colors</h3>
+      Difficulty: Hard <br />
+      The pokemon's main body color as designated by Pokemon Home. <br />
+      Although it seems easy, many pokemon have weird colors that seem downright
+      wrong to me.
+      <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_color"
+        >A list</a
+      >
+      of all pokemon colors has been provided.
+      <h3 id="abil">Abil</h3>
+      Difficulty: IMPOSSIBLE <br />
+      How common a pokemon's ability is <br />
+      This insane category was created by me when I was very bored. It is a
+      measure of how common a pokemon's ability is based on how many other
+      pokemon have the same ability. The abil score is how many pokemon have
+      that ability. If a pokemon has multiple abilities, it takes the largest
+      abil score of their abilities. I have created lists for
+      <a href="1abil.txt">1 abil</a>, <a href="2-19abil.txt">2-19 abil</a>,
+      <a href="20-30abil.txt">20-30 abil</a>, and
+      <a href="30+abil.txt">30+ abil</a>.
+      <h3 id="generations">Generations</h3>
+      Difficulty: Medium<br />
+      The generation of origin for a pokemon. <br />
+      For example, machop comes from Kanto. Goodra comes from Kalos. Hisui
+      pokemon are under the galar category.
+      <a
+        href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_National_Pokédex_number"
+        >A list</a
+      >
+      of all pokemon and their generation has been provided.
+      <h3 id="moves">Moves</h3>
+      Difficulty: Very Hard <br />
+      The moves a pokemon can learn in any gen. <br />
+      The pokemon api considers moves from any generation. Check the
+      <a href="pokemonlist.html">pokemon list</a> for information about who can
+      learn which moves.
+      <h3 id="evolutiontriggers">Evolution Triggers</h3>
+      Difficulty: Hard <br />
+      What causes a pokemon to evolve. <br />
+      Pokemon can only have 1 evolution trigger. It is looking for the evolved
+      form. For example, poliwhirl fits the category level-up, poliwrath fits
+      the category use-item, and politoed fits the category trade. <br />
+      Check the
+      <a href="pokemonlist.html">pokemon list</a> for information about which
+      pokemon evolve from each evolution trigger.
+      <h3 id="abilities">Abilities</h3>
+      Difficulty: Very Hard <br />
+      If a pokemon has 1 or 2 types. <br />
+      <h3 id="egggroups">Egg Groups</h3>
+      Difficulty: Insane <br />
+      If a pokemon has 1 or 2 types. <br />
+      <h3 id="genderrates">Gender Rates</h3>
+      Difficulty: IMPOSSIBLE <br />
+      If a pokemon has 1 or 2 types. <br />
+      <h3 id="growthrates">Growth Rates</h3>
+      Difficulty: IMPOSSIBLE <br />
+      If a pokemon has 1 or 2 types. <br />
+      <h3 id="shapes">Shapes</h3>
+      Difficulty: Very Hard <br />
+      If a pokemon has 1 or 2 types. <br />
+    </div>
+  </body>
+  <script src="mainPageScript.js"></script>
+</html>

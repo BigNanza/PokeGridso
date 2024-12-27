@@ -3,80 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <title>PokeGridso</title>
-    <link rel="stylesheet" href="IndexStyle.css" type="text/css" />
+    <link rel="stylesheet" href="mainPageStyle.css" type="text/css" />
   </head>
   <body>
-    <div class="categories" id="categories">
-      <div>
-        <label
-          ><input type="checkbox" name="catOpt" value="0" />Mono/Dual
-          type</label
-        ><br />
-        <label><input type="checkbox" name="catOpt" value="1" />Types</label
-        ><br />
-        <label><input type="checkbox" name="catOpt" value="2" />Groups</label
-        ><br />
-        <label><input type="checkbox" name="catOpt" value="3" />Evos</label
-        ><br />
-        <label><input type="checkbox" name="catOpt" value="4" />Colors</label
-        ><br />
-        <label><input type="checkbox" name="catOpt" value="5" />Abil</label
-        ><br />
-        <label
-          ><input type="checkbox" name="catOpt" value="6" />Generations</label
-        ><br />
-        <label><input type="checkbox" name="catOpt" value="7" />Moves</label
-        ><br />
-        <label
-          ><input type="checkbox" name="catOpt" value="8" />Evolution
-          Trigger</label
-        ><br />
-        <label><input type="checkbox" name="catOpt" value="9" />Ability</label
-        ><br />
-        <label
-          ><input type="checkbox" name="catOpt" value="10" />Egg Group</label
-        ><br />
-        <label
-          ><input type="checkbox" name="catOpt" value="11" />Gender Rate</label
-        ><br />
-        <label
-          ><input type="checkbox" name="catOpt" value="12" />Growth Rate</label
-        ><br />
-        <label
-          ><input type="checkbox" name="catOpt" value="13" />Shape Rate</label
-        >
-      </div>
+    <div class="header">
+      <div class="logo"></div>
+      <div class="mainTitle">PokeGridso</div>
+      <div class="otherPages">Game Chooser Pokemon List Contact Me</div>
     </div>
-    <div class="winCon" id="winCon">
-      <div class="winChecks" id="winChecks">
-        <label><input type="checkbox" id="minmax" />Go for minimum?</label
-        ><br />
-        <label><input type="checkbox" id="second" />Go for second?</label>
-      </div>
-      <div class="winChooser" id="winChooser">
-        <div>
-          <label><input type="radio" name="winOpt" value="0" />Weight</label
-          ><br />
-          <label><input type="radio" name="winOpt" value="1" />Shine</label
-          ><br />
-          <label><input type="radio" name="winOpt" value="2" />Speed</label
-          ><br />
-          <label><input type="radio" name="winOpt" value="3" />Learnset</label
-          ><br />
-          <label><input type="radio" name="winOpt" value="4" />Height</label
-          ><br />
-          <label><input type="radio" name="winOpt" value="5" />Stats</label>
-        </div>
-      </div>
+    <h1>PokeGridso</h1>
+    <div class="howtoplay">
+      <h2>How to play</h2>
+      This game is heavily inspired from
+      <a href="https://www.pokedoku.com/">PokeDoku</a>
+      and it functions almost the same. You have to fill in a pokemon that fits
+      the categories indicated by the row and column headers. <br />
+      However, there is one <strong>major</strong> twist. The goal of the game
+      is to get the pokemon that has the <strong>highest value</strong> in a
+      specific stat. For example, in PokeFatso, you have to get the pokemon with
+      the highest weight.<br />
+      More info on each of the categories and win conditions can be found on the
+      <a href="gamechooser.html">game chooser</a> page. To see all the pokemon
+      that fit a category check the
+      <a href="pokemonlist.html">pokemon list</a> page.
     </div>
-
-    <div class="pp" id="ppClass">
-      <label><input type="checkbox" id="pp" />Enable pp?</label>
+    <div class="aboutsite">
+      <h2>About this site</h2>
+      As mentioned previously, I took a lot of inspiration from PokeDoku and you
+      should definitely check them out. <br />
+      I wanted to expand the original PokeDoku game and add more categories and
+      win conditions. <br />
+      All the data taken from this site is from the
+      <a href="https://pokeapi.co">RESTful Pokemon API</a> so a big thanks to
+      them. The data from the api is not perfect so if there are any errors
+      please reach out to me.
     </div>
-
-    <div class="section">
-      <button onclick="takeToGame()">Submit and Take to Game</button>
+    <div class="aboutme">
+      <h2>About me</h2>
+      This game started as a fun passion project for me to have fun learning
+      html so this website isn't the greatest.
+      <a href="contactme.html">Contact me</a> for any questions or inquiries.
     </div>
   </body>
-  <script src="IndexScript.js"></script>
+  <script src="mainPageScript.js"></script>
 </html>
