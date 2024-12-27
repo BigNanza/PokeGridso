@@ -47,7 +47,8 @@ fetch("dictoflists.json")
 
     if (!validateParams(params)) {
       // Redirect to index.html if parameters are invalid
-      //window.location.href = "index.html";
+      //console.log("Param issue");
+      window.location.href = "index.html";
       return;
     }
     if (!pp) document.getElementById("headerPP").style.display = "none";
@@ -117,7 +118,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 closeModalBtn.addEventListener("click", () => {
-  console.log("HELLO");
+  //console.log("HELLO");
   modal.style.display = "none";
 });
 
@@ -431,27 +432,35 @@ function findCommonNumbers(arr1, arr2, arr3) {
   }
 }*/
 function generateCategories() {
+  //console.log(currDictOfLists);
   while (true) {
+    let deepCopy = JSON.parse(JSON.stringify(currDictOfLists));
     let firstCategory =
-      Object.keys(currDictOfLists)[
-        Math.floor(Math.random() * Object.keys(currDictOfLists).length)
+      Object.keys(deepCopy)[
+        Math.floor(Math.random() * Object.keys(deepCopy).length)
       ]; // Primary Index
-    listCategory = currDictOfLists[firstCategory];
+    //console.log(firstCategory);
+    //console.log(firstCategory);
+    let listCategory = deepCopy[firstCategory];
     nextThree = [];
     if (listCategory.length < 3) continue;
+    //console.log(listCategory);
     for (let x = 0; x < 3; x++) {
+      //console.log("eee");
       // Gen the 3 Oppos
       mrGuy = Math.floor(Math.random() * listCategory.length);
-      if (currDictOfLists[listCategory[mrGuy]].length < 3) {
+      if (deepCopy[listCategory[mrGuy]].length < 3) {
         x--;
         continue;
       }
       nextThree.push(listCategory[mrGuy]);
       listCategory.splice(mrGuy, 1);
     }
-    const arr1 = currDictOfLists[nextThree[0]];
-    const arr2 = currDictOfLists[nextThree[1]];
-    const arr3 = currDictOfLists[nextThree[2]];
+    //console.log(nextThree);
+
+    const arr1 = deepCopy[nextThree[0]];
+    const arr2 = deepCopy[nextThree[1]];
+    const arr3 = deepCopy[nextThree[2]];
     yipperskis = findCommonNumbers(arr1, arr2, arr3);
     //console.log(yipperskis);
     if (yipperskis.length < 2) continue;
@@ -880,6 +889,7 @@ function getCurrDictOfLists() {
 
 function validateCurrDictOfLists() {
   for (const key in currDictOfLists) {
+    //For each key in the current list
     if (currDictOfLists[key].length < 4) continue;
     let valueA;
     let valueB;
@@ -894,7 +904,7 @@ function validateCurrDictOfLists() {
           valueC = currDictOfLists[key][c];
           if (valueC === parseInt(key, 10)) continue;
           //console.log(a + " " + b + " " + c);
-          if (threeValuesCommon(a, b, c)) {
+          if (threeValuesCommon(valueA, valueB, valueC)) {
             //console.log(true);
             return true;
           }
@@ -902,55 +912,32 @@ function validateCurrDictOfLists() {
       }
     }
   }
-  console.log(false);
-  //window.location.href = "index.html";
+  //console.log("currDictOfList problem");
+  //console.log(currDictOfLists);
+  window.location.href = "index.html";
   return false;
 }
-
 function threeValuesCommon(a, b, c) {
-  // Get the lists for the given numbers a, b, and c
-  const listA = currDictOfLists[a];
-  const listB = currDictOfLists[b];
-  const listC = currDictOfLists[c];
+  // Access the lists using the provided keys
+  let listA = currDictOfLists[a];
+  let listB = currDictOfLists[b];
+  let listC = currDictOfLists[c];
 
-  // If any of the lists is undefined, return false
-  if (!listA || !listB || !listC) {
-    return false;
-  }
+  // Use a Set to store common values
+  let commonValues = new Set();
 
-  // Create a map to track occurrences of numbers
-  const countMap = new Map();
-
-  // Helper function to update the count map
-  function updateCountMap(list) {
-    for (const num of list) {
-      if (num !== a && num !== b && num !== c) {
-        // Exclude a, b, and c
-        countMap.set(num, (countMap.get(num) || 0) + 1);
-        if (countMap.get(num) === 3) {
-          // Found 3 common values
-          return true;
-        }
-      }
+  // Iterate through the first list and check if the value exists in the other two lists
+  for (let value of listA) {
+    if (listB.includes(value) && listC.includes(value)) {
+      commonValues.add(value);
     }
-    return false;
-  }
 
-  // Update the count map for each list
-  if (updateCountMap(listA) || updateCountMap(listB) || updateCountMap(listC)) {
-    return true;
-  }
-
-  // Check if there are at least 3 common values
-  let commonCount = 0;
-  for (const [key, value] of countMap.entries()) {
-    if (value >= 3) {
-      commonCount++;
-      if (commonCount >= 3) {
-        return true;
-      }
+    // Return true if 3 common values are found
+    if (commonValues.size >= 3) {
+      return true;
     }
   }
 
-  return false; // No 3 common values found
+  // If fewer than 3 common values are found, return false
+  return commonValues.size >= 3;
 }
