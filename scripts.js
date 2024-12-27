@@ -47,7 +47,7 @@ fetch("dictoflists.json")
 
     if (!validateParams(params)) {
       // Redirect to index.html if parameters are invalid
-      window.location.href = "index.html";
+      //window.location.href = "index.html";
       return;
     }
     if (!pp) document.getElementById("headerPP").style.display = "none";
@@ -903,7 +903,7 @@ function validateCurrDictOfLists() {
     }
   }
   console.log(false);
-  window.location.href = "index.html";
+  //window.location.href = "index.html";
   return false;
 }
 

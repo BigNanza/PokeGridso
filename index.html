@@ -3,8 +3,80 @@
   <head>
     <meta charset="utf-8" />
     <title>PokeGridso</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="IndexStyle.css" type="text/css" />
   </head>
-  <body></body>
+  <body>
+    <div class="categories" id="categories">
+      <div>
+        <label
+          ><input type="checkbox" name="catOpt" value="0" />Mono/Dual
+          type</label
+        ><br />
+        <label><input type="checkbox" name="catOpt" value="1" />Types</label
+        ><br />
+        <label><input type="checkbox" name="catOpt" value="2" />Groups</label
+        ><br />
+        <label><input type="checkbox" name="catOpt" value="3" />Evos</label
+        ><br />
+        <label><input type="checkbox" name="catOpt" value="4" />Colors</label
+        ><br />
+        <label><input type="checkbox" name="catOpt" value="5" />Abil</label
+        ><br />
+        <label
+          ><input type="checkbox" name="catOpt" value="6" />Generations</label
+        ><br />
+        <label><input type="checkbox" name="catOpt" value="7" />Moves</label
+        ><br />
+        <label
+          ><input type="checkbox" name="catOpt" value="8" />Evolution
+          Trigger</label
+        ><br />
+        <label><input type="checkbox" name="catOpt" value="9" />Ability</label
+        ><br />
+        <label
+          ><input type="checkbox" name="catOpt" value="10" />Egg Group</label
+        ><br />
+        <label
+          ><input type="checkbox" name="catOpt" value="11" />Gender Rate</label
+        ><br />
+        <label
+          ><input type="checkbox" name="catOpt" value="12" />Growth Rate</label
+        ><br />
+        <label
+          ><input type="checkbox" name="catOpt" value="13" />Shape Rate</label
+        >
+      </div>
+    </div>
+    <div class="winCon" id="winCon">
+      <div class="winChecks" id="winChecks">
+        <label><input type="checkbox" id="minmax" />Go for minimum?</label
+        ><br />
+        <label><input type="checkbox" id="second" />Go for second?</label>
+      </div>
+      <div class="winChooser" id="winChooser">
+        <div>
+          <label><input type="radio" name="winOpt" value="0" />Weight</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="1" />Shine</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="2" />Speed</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="3" />Learnset</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="4" />Height</label
+          ><br />
+          <label><input type="radio" name="winOpt" value="5" />Stats</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="pp" id="ppClass">
+      <label><input type="checkbox" id="pp" />Enable pp?</label>
+    </div>
+
+    <div class="section">
+      <button onclick="takeToGame()">Submit and Take to Game</button>
+    </div>
+  </body>
   <script src="IndexScript.js"></script>
 </html>
