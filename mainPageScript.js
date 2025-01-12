@@ -1,4 +1,4 @@
-function takeToGame() {
+function goSingle() {
   const selectedCategories = Array.from(
     document.querySelectorAll('input[name="catOpt"]')
   ).reduce((arr, button) => {
