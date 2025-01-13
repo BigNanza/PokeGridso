@@ -78,6 +78,9 @@ fetch("dictoflists.json")
     } else if (winCon[2] === 6) {
       document.getElementById("headerText").innerText = document.title =
         "PokeSmashso";
+    } else if (winCon[2] === 7) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeScrabbleso";
     }
     if (winCon[0] === false) {
       document.getElementById("headerText").innerText = document.title =
@@ -783,7 +786,7 @@ function validateParams(params) {
       typeof winCon[1] === "boolean" &&
       Number.isInteger(winCon[2]) &&
       winCon[2] > -1 &&
-      winCon[2] < 7;
+      winCon[2] < 8;
     const isPpValid = typeof pp === "boolean";
     return isCategoriesValid && isWinConValid && isPpValid;
   } catch (error) {
