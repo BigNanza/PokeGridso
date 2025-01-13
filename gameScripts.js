@@ -81,6 +81,21 @@ fetch("dictoflists.json")
     } else if (winCon[2] === 7) {
       document.getElementById("headerText").innerText = document.title =
         "PokeScrabbleso";
+    } else if (winCon[2] === 8) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeHPso";
+    } else if (winCon[2] === 9) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeAttackso";
+    } else if (winCon[2] === 10) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeDefenseso";
+    } else if (winCon[2] === 11) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeSpecialAttackso";
+    } else if (winCon[2] === 12) {
+      document.getElementById("headerText").innerText = document.title =
+        "PokeSpecialDefenseso";
     }
     if (winCon[0] === false) {
       document.getElementById("headerText").innerText = document.title =
@@ -786,7 +801,7 @@ function validateParams(params) {
       typeof winCon[1] === "boolean" &&
       Number.isInteger(winCon[2]) &&
       winCon[2] > -1 &&
-      winCon[2] < 8;
+      winCon[2] < 13;
     const isPpValid = typeof pp === "boolean";
     return isCategoriesValid && isWinConValid && isPpValid;
   } catch (error) {
