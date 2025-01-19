@@ -639,16 +639,21 @@ function calculatePercent(pokemon, category) {
   let maxMon = getOptimal(category, winConditionIndex, winCon[0], winCon[1]);
   let quotient;
   if (winCon[0] === true) {
-    quotient =
-      (pokemonData[pokemon][winConditionIndex] /
-        pokemonData[maxMon][winConditionIndex]) *
-      100;
-  } else {
-    quotient =
-      (1 /
+    if (pokemonData[maxMon][winConditionIndex] === 0) quotient = 100;
+    else
+      quotient =
         (pokemonData[pokemon][winConditionIndex] /
-          pokemonData[maxMon][winConditionIndex])) *
-      100;
+          pokemonData[maxMon][winConditionIndex]) *
+        100;
+  } else {
+    if (pokemonData[pokemon][winConditionIndex] === 0) quotient = 100;
+    else if (pokemonData[maxMon][winConditionIndex] === 0) quotient = 0;
+    else
+      quotient =
+        (1 /
+          (pokemonData[pokemon][winConditionIndex] /
+            pokemonData[maxMon][winConditionIndex])) *
+        100;
   }
   if (quotient > 100) quotient = 10000 / quotient;
   return [`${quotient.toFixed(1)}%`, maxMon];
