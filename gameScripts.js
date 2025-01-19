@@ -739,9 +739,9 @@ function submitPokemon() {
       button.disabled = true;
     }
     confetti({
-      particleCount: 5000,
-      spread: 10000,
-      origin: { y: 0.4 },
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
     });
     showModal();
   }
