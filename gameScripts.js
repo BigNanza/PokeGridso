@@ -763,6 +763,8 @@ function showModal() {
 }
 window.onload = function () {};
 function playAgain() {
+  const modal = document.getElementById("end-modal");
+  modal.style.display = "none";
   let button;
   for (let i = 1; i <= 9; i++) {
     button = document.getElementById("b" + i);
@@ -770,7 +772,6 @@ function playAgain() {
     document.getElementById("bl" + i).innerHTML = "\u200B";
     button.disabled = false;
   }
-  document.getElementById("end-content").style.display = "none";
   document.getElementById("endScreen").textContent = "You Won! Percentage: ";
   categories = generateCategories();
   setCategories();
