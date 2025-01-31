@@ -65,7 +65,7 @@ fetch("dictoflists.json")
         "PokeShineso";
     } else if (winCon[2] === 2) {
       document.getElementById("headerText").innerText = document.title =
-        "PokeLearnso";
+        "PokeSpeedso";
     } else if (winCon[2] === 3) {
       document.getElementById("headerText").innerText = document.title =
         "PokeLearnso";
