@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>PokeGridso</title>
-    <link rel="stylesheet" href="mainPageStyle.css" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Filter</title>
+    <link rel="stylesheet" href="mainPageStyle.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="logo"></div>
-      <div class="mainTitle">PokeGridso</div>
-      <div class="otherPages">Game Chooser Pokemon List Contact Me</div>
-    </div>
+    <h1>Pokémon Filter</h1>
+
+    <label for="dropdown">Select Categories:</label>
+    <input list="categories" id="dropdown" />
+    <datalist id="categories"></datalist>
+
+    <h2>Selected Categories</h2>
+    <ul id="selected-categories"></ul>
+
+    <h2>Valid Pokémon</h2>
+    <ul id="selected-list"></ul>
+
+    <script src="pokemonlistscript.js"></script>
   </body>
-  <script src="mainPageScript.js"></script>
 </html>
