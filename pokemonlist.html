@@ -8,7 +8,35 @@
   </head>
   <body>
     <h1>Pokemon Filter</h1>
-
+    <h2>Extra Category Selection</h2>
+    <label for="extra-select">Select an extra category:</label>
+    <select id="extra-select">
+      <option value="-1">-- Select One --</option>
+      <option value="0">Weight</option>
+      <option value="1">Shine</option>
+      <option value="2">Speed</option>
+      <option value="3">Learnset</option>
+      <option value="4">Height</option>
+      <option value="5">Stats</option>
+      <option value="6">SmashRate</option>
+      <option value="7">ScrabbleScore</option>
+      <option value="8">HP</option>
+      <option value="9">Attack</option>
+      <option value="10">Defense</option>
+      <option value="11">SpecialAttack</option>
+      <option value="12">SpecialDefense</option>
+      <option value="13">VGC_Usage</option>
+      <option value="14">Gen9Singles_Usage</option>
+      <option value="15">BMI</option>
+      <option value="16">Similarity to Lebron</option>
+      <option value="17">Height and weight difference</option>
+      <option value="18">
+        Total of atomic numbers of elements in the name
+      </option>
+      <option value="19">r34 entries</option>
+      <option value="20">Ranking in other games</option>
+    </select>
+    <p id="selected-extra">Selected: None</p>
     <label for="dropdown">Select Categories:</label>
     <input list="categories" id="dropdown" />
     <datalist id="categories"></datalist>
@@ -20,5 +48,15 @@
     <ul id="selected-list"></ul>
 
     <script src="pokemonlistscript.js"></script>
+    <script>
+      document
+        .getElementById("extra-select")
+        .addEventListener("change", (event) => {
+          const selectedValue = event.target.value;
+          document.getElementById("selected-extra").textContent = selectedValue
+            ? `Selected: ${selectedValue}`
+            : "Selected: None";
+        });
+    </script>
   </body>
 </html>
