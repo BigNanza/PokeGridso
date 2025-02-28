@@ -55,7 +55,7 @@ function formatCategoryName(index, name) {
   if (index >= 19 && index <= 22) return `Group: ${name}`;
   if (index >= 24 && index <= 27) return `Evolution: ${name}`;
   if (index >= 28 && index <= 37) return `Color: ${name}`;
-  if (index >= 38 && index <= 41) return `Ability: ${name}`;
+  if (index >= 38 && index <= 41) return `Abil: ${name}`;
   if (index >= 42 && index <= 50) return `Generation: ${name}`;
   if (index >= 51 && index <= 969) return `Move: ${name}`;
   if (index >= 970 && index <= 982) return `Evolution Trigger: ${name}`;
@@ -117,6 +117,7 @@ function updateValidPokemon() {
     )
   );
   updateSelectedList(); // Update displayed Pokémon
+  updateSelectedCategoriesList();
 }
 
 // Function to verify if a Pokémon fits the selected category
@@ -167,7 +168,24 @@ function updateSelectedCategoriesList() {
 
   selectedCategories.forEach((category) => {
     const listItem = document.createElement("li");
-    listItem.textContent = category; // Just the category name, no extra text
+    listItem.textContent = category + " "; // Just the category name, no extra text
+    const removeButton = document.createElement("span");
+    removeButton.textContent = " ✖"; // Unicode 'x' with spacing
+    removeButton.style.cursor = "pointer";
+    removeButton.style.marginLeft = "8px";
+    removeButton.style.color = "red"; // Make it visually clear
+    removeButton.style.fontWeight = "bold";
+    removeButton.style.userSelect = "none"; // Prevent text selection
+    removeButton.setAttribute("role", "button"); // Accessibility improvement
+
+    removeButton.onclick = () => {
+      selectedCategories.delete(category); // Remove the category
+      updateValidPokemon(); // Update the Pokémon list
+      updateSelectedCategoriesList(); // Refresh the list
+    };
+
+    listItem.appendChild(removeButton);
+
     selectedCategoryList.appendChild(listItem);
   });
 }
