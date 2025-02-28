@@ -109,7 +109,7 @@ function handleInputChange(event) {
   }
 }
 
-// Function to update the list of valid Pokémon fitting the selected categories
+// Function to update the list of valid Pokemon fitting the selected categories
 function updateValidPokemon() {
   validPokemon = keywords.filter((pokemon) =>
     Array.from(selectedCategories).every((category) =>
